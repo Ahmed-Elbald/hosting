@@ -50,6 +50,12 @@ i {
 .col:last-child:hover {
     transform: translateZ(15px) translateX(-7px);
 }
+@media (max-width:543px) {
+    .parent .col:first-child:hover, 
+    .parent .col:last-child:hover {
+        transform: translateZ(15px) translateX(0);
+    }
+}
 .parent .col:hover * {
     background-color: #1979bd !important;
     color: white;
