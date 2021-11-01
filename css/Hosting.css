@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding-left: 0;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    box-sizing: border-box;
+}
+i {
+    cursor: pointer;
+}
+:root {
+    --iden: rgb(26, 26, 26);
+    --iden-differ: rgb(38 38 38);
+}
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+.center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.parent {
+    margin: 3vh auto;
+    padding: 2vh;
+    transform-style: preserve-3d;
+    perspective: 600px;
+    perspective-origin: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+}
+.parent .col {
+    height: fit-content;
+    background-color: var(--iden);
+    padding: 5vh 0;
+    border: .2px solid rgb(51 51 51);
+    transition: .3s .1s linear;
+}
+.parent .col:hover {
+    background-color: #1979bd;
+    transform: translateZ(15px) ;
+}
+.col:first-child:hover {
+    transform: translateZ(15px) translateX(7px);
+}
+.col:last-child:hover {
+    transform: translateZ(15px) translateX(-7px);
+}
+.parent .col:hover * {
+    background-color: #1979bd !important;
+    color: white;
+    border-color: rgb(177, 177, 177) !important;
+}
+.parent .col * {
+    transition: .3s .1s linear;
+}
+.parent .col > h2 {
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+.parent .col > h2 > span {
+    font-size: .8rem;
+}
+.parent .col > div {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    border-top: .2px solid rgb(51 51 51);
+}
+.parent .col > div > p {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: gray;
+}
+.parent .col > div > p:not(.different:last-child) {
+    border-bottom: .2px solid rgb(51 51 51);
+}
+.parent .col > div > p.different {
+    background-color: var(--iden-differ);
+}
+.parent .col >  button {
+    width: 60%;
+    padding: 10px;
+    border-radius: 2px;
+    color: white;
+    margin: 30px auto 0;
+    outline: none;
+    border: .5px solid rgb(80, 80, 80);
+    cursor: pointer;
+    display: block;
+    background-color: var(--iden);
+}
